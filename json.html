@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Title Page</title>
+
+	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+		<!--[if lt IE 9]>
+			<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+			<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+			<![endif]-->
+		</head>
+		<body>
+
+			<div id="output"></div>
+			<!-- jQuery -->
+			<script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+			
+			<script>
+
+				var jsonObj = 
+				{
+					"level": [
+					{
+						"name": "CiscoSingaporeEBC",
+						"level": [
+							{
+								"name": "Khoo Tech Puat",
+								"level": [
+									{
+										"name": "Boon Leong Ong",
+										"id": 6919
+									},
+									{
+										"name": "Kiat Ho",
+										"id": 6917
+									},
+									{
+										"name": "Overall Experience",
+										"id": 6918
+									}
+								]
+							}
+						]
+					},
+					{
+						"name": "CiscoLondonEBC",
+						"level": [
+							{
+								"name": "Bernard Mathews Ltd.",
+								"id": 2367,
+								"level": [
+									{
+										"name": "Barry Pascolutti",
+										"id": 7193
+									},
+									{
+										"name": "Kathrine Eilersten",
+										"id": 7194
+									},
+									{
+										"name": "Martin Rowley",
+										"id": 7189
+									}
+								]
+							},
+							{
+								"name": "FNHW Day 1",
+								"id": 5678,
+								"level": [
+									{
+										"name": "Jurgen Gosch",
+										"id": 7834
+									},
+									{
+										"name": "Overall Experience",
+										"id": 7835
+									}
+								]
+							},
+							{
+								"name": "Groupe Steria Day 1",
+								"id": 2789,
+								"level": [
+									{
+										"name": "Adam Philpott",
+										"id": 7919
+									},
+									{
+										"name": "Pranav Kumar",
+										"id": 7921
+									},
+									{
+										"name": "Steve Simlo",
+										"id": 7928
+									}
+								]
+							}
+						]
+					}]
+				};
+
+				//var json = '';
+				//var property_set = new Set();
+
+
+				// function iterate(obj, stack)  {
+				// 	json = "<ul>";
+
+				// 	for (var property in obj)  {
+				// 		if (obj.hasOwnProperty(property))  {
+				// 			if (typeof obj[property] == "object") {
+				// 				iterate(obj[property], stack + '.' + property);
+				// 			} 
+				// 			else {
+				//             	// console.log(property);
+				//             	property_set.add(property);
+				//             	json+="<li>";
+				//             	if(typeof obj[property] !== "number") {
+			 //            		json+="<li>"+obj[property]+"</li>";
+			 //            		console.log(obj[property]);
+		  //           			}
+				//             }
+				//         } json += "</li>";
+			 //    	}
+				// }
+
+				// iterate(jsonObj)
+
+
+
+				//the object
+
+				// function listMenu(o) {
+
+				//     var ul = document.createElement('ul');
+				//     for (var p in o) {
+
+				//             var li = document.createElement('li');
+				//             var span = document.createElement('span');
+
+				//             if (typeof o[p] == "object") {
+				//             	li.appendChild(listMenu(o[p]));
+				//             }
+
+				//             else if (typeof o[p] == name ) {
+				//             	span.appendChild(listMenu(o[p]));
+				//             	span.className="hidden";
+				            	
+				//             }
+
+				//             else li.innerHTML = o[p];
+				//             ul.appendChild(li);
+				//         //}
+				//     }
+				//     return ul;
+				// }
+				// document.body.appendChild( listMenu(jsonObj) );
+
+
+				function json_tree(object) {
+				var json="<ul>";
+				for(prop in object){
+				    var value 	= object[prop];
+				    console.log(value);
+				    switch (typeof(value)){
+				        case "object":
+				        	var token = Math.random().toString(36).substr(2,16);
+				                json += "<li><a class='label' href='#"+token+"' data-toggle='collapse'>"+object.prop+"</a><div class='collapse'>"+json_tree(value)+"</div></li>";
+		                break;
+
+		                case "number":
+				                json += '<label>'+value+'<input type="checkbox" value="'+value+'"/></label>'
+		                break;
+
+		                case "string":
+				                json += '<li>'+value+'</li>'
+		                break;
+
+		                default:
+		                	json += "<li>"+prop+"="+value+"</li>";
+		            	} 
+			        }
+			        return json+"</ul>";
+
+			    } 
+
+
+				$(document).ready(function() {
+				    $('#output').html(json_tree(jsonObj));
+				});
+
+
+
+			</script>
+
+</body>
+</html>
