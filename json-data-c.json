@@ -1,0 +1,122 @@
+{
+    "level_0": [
+        {
+            "level_0_name": "Americas",
+            "level_0_id": 1,
+            "level_1": [
+                {
+                    "level_1_name": "CiscoSanJoseEBC",
+                    "level_1_id": 12345,
+                    "level_2": [
+                        {
+                            "level_2_name": "MinistryOfDefense",
+                            "level_2_id": 2451,
+                            "level_3": [
+                                {
+                                    "name": "Andy Schutz",
+                                    "id": 7867
+                                },
+                                {
+                                    "name": "Overall Experience",
+                                    "id": 7866
+                                },
+                                {
+                                    "name": "Vijay Venugopal",
+                                    "id": 7870
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "level_0_name": "APJ",
+            "level_1": [
+                {
+                    "level_1_name": "CiscoSingaporeEBC",
+                    "level_2": [
+                        {
+                            "level_2_name": "Khoo Tech Puat",
+                            "level_2_id": 2222,
+                            "level_3": [
+                                {
+                                    "name": "Boon Leong Ong",
+                                    "id": 6919
+                                },
+                                {
+                                    "name": "Kiat Ho",
+                                    "id": 6917
+                                },
+                                {
+                                    "name": "Overall Experience",
+                                    "id": 6918
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "level_0_name": "Emear",
+            "level_1": [
+                {
+                    "level_1_name": "CiscoLondonEBC",
+                    "level_2": [
+                        {
+                            "level_2_name": "Bernard Mathews Ltd.",
+                            "level_2_id": 2367,
+                            "level_3": [
+                                {
+                                    "name": "Barry Pascolutti",
+                                    "id": 7193
+                                },
+                                {
+                                    "name": "Kathrine Eilersten",
+                                    "id": 7194
+                                },
+                                {
+                                    "name": "Martin Rowley",
+                                    "id": 7189
+                                }
+                            ]
+                        },
+                        {
+                            "level_2_name": "FNHW Day 1",
+                            "level_2_id": 5678,
+                            "level_3": [
+                                {
+                                    "name": "Jurgen Gosch",
+                                    "id": 7834
+                                },
+                                {
+                                    "name": "Overall Experience",
+                                    "id": 7835
+                                }
+                            ]
+                        },
+                        {
+                            "level_2_name": "Groupe Steria Day 1",
+                            "level_2_id": 2789,
+                            "level_3": [
+                                {
+                                    "name": "Adam Philpott",
+                                    "id": 7919
+                                },
+                                {
+                                    "name": "Pranav Kumar",
+                                    "id": 7921
+                                },
+                                {
+                                    "name": "Steve Simlo",
+                                    "id": 7928
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

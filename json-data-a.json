@@ -1,0 +1,180 @@
+{
+    "status": "success",
+    "error": "",
+    "authenticated": false,
+    "aptus_tree": {
+        "level_2": [
+            {
+                "level_2_name": "Employee",
+                "level_2_id": "63",
+                "level_2_start": "",
+                "level_3": [
+                    {
+                        "name": "Cafeteria",
+                        "id": "693",
+                        "start_date": ""
+                    },
+                    {
+                        "name": "Front Desk",
+                        "id": "695",
+                        "start_date": ""
+                    },
+                    {
+                        "name": "Housekeeping",
+                        "id": "694",
+                        "start_date": ""
+                    }
+                ]
+            },
+            {
+                "level_2_name": "TusCA",
+                "level_2_id": "26",
+                "level_2_start": "",
+                "level_3": [
+                    {
+                        "name": "TusCA",
+                        "id": "735",
+                        "start_date": ""
+                    },
+                    {
+                        "name": "TusCA - Check Presenter",
+                        "id": "108",
+                        "start_date": ""
+                    }
+                ]
+            },
+            {
+                "level_2_name": "Regency Club",
+                "level_2_id": "25",
+                "level_2_start": "",
+                "level_3": [
+                    {
+                        "name": "Club",
+                        "id": "736",
+                        "start_date": ""
+                    },
+                    {
+                        "name": "Regency Club - Kiosk",
+                        "id": "103",
+                        "start_date": ""
+                    }
+                ]
+            },
+            {
+                "level_2_name": "Evolution",
+                "level_2_id": "24",
+                "level_2_start": "",
+                "level_3": [
+                    {
+                        "name": "Evolution",
+                        "id": "737",
+                        "start_date": ""
+                    },
+                    {
+                        "name": "Evolution - Check Presenter",
+                        "id": "109",
+                        "start_date": ""
+                    }
+                ]
+            }
+        ],
+        "level_3": [
+            {
+                "level_3_name": "Regency Club - Kiosk",
+                "level_3_id": "103"
+            },
+            {
+                "level_3_name": "TusCA - Check Presenter",
+                "level_3_id": "108"
+            },
+            {
+                "level_3_name": "Evolution - Check Presenter",
+                "level_3_id": "109"
+            },
+            {
+                "level_3_name": "Cafeteria",
+                "level_3_id": "693"
+            },
+            {
+                "level_3_name": "Housekeeping",
+                "level_3_id": "694"
+            },
+            {
+                "level_3_name": "Front Desk",
+                "level_3_id": "695"
+            },
+            {
+                "level_3_name": "TusCA",
+                "level_3_id": "735"
+            },
+            {
+                "level_3_name": "Club",
+                "level_3_id": "736"
+            },
+            {
+                "level_3_name": "Evolution",
+                "level_3_id": "737"
+            },
+            {
+                "level_3_name": "Guestroom",
+                "level_3_id": "100"
+            },
+            {
+                "level_3_name": "Lobby",
+                "level_3_id": "101"
+            },
+            {
+                "level_3_name": "Grab N Go",
+                "level_3_id": "102"
+            },
+            {
+                "level_3_name": "Mezzanine",
+                "level_3_id": "104"
+            },
+            {
+                "level_3_name": "Stayfit",
+                "level_3_id": "105"
+            },
+            {
+                "level_3_name": "In Room Dining",
+                "level_3_id": "106"
+            },
+            {
+                "level_3_name": "Prototype",
+                "level_3_id": "107"
+            },
+            {
+                "level_3_name": "Guestroom 1",
+                "level_3_id": "110"
+            },
+            {
+                "level_3_name": "Guestroom 2",
+                "level_3_id": "111"
+            },
+            {
+                "level_3_name": "Guestroom 3",
+                "level_3_id": "112"
+            },
+            {
+                "level_3_name": "Meeting Room 1",
+                "level_3_id": "127"
+            },
+            {
+                "level_3_name": "Meeting Room 3",
+                "level_3_id": "128"
+            },
+            {
+                "level_3_name": "Meeting Room 2",
+                "level_3_id": "129"
+            },
+            {
+                "level_3_name": "Lobby 2",
+                "level_3_id": "130"
+            },
+            {
+                "level_3_name": "Hyatt Text Number",
+                "level_3_id": "159"
+            }
+        ]
+    }
+}

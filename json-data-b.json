@@ -1,0 +1,32 @@
+{
+	"level_2": [
+		{
+			"level_2_name": "Console",
+			"level_2_id": "9",
+			"level_2_start": null,
+			"level_3": [
+				{
+					"name": "PS1",
+					"id": "160",
+					"start_date": null
+				},
+				{
+					"name": "PS3",
+					"id": "38",
+					"start_date": null
+				},
+				{
+					"name": "PS4",
+					"id": "91",
+					"start_date": null
+				}
+			]
+		}
+	],
+	"level_3": [
+		{
+			"level_3_name": "PS5",
+			"level_3_id": "92"
+		}
+	]
+}
