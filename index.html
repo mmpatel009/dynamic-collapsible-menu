@@ -39,7 +39,6 @@
         This will be collapsable menu like the following example: http://jsfiddle.net/creativestudio/LvL75qw5/
         Simple styling will be great but is not required, this has to be done with simple jquery, not a plugin
     -->
-
     <!--<div class="sidebar" style="display:none;">
         <label for="checkAll">Select/Unselect All <input type="checkbox" id="checkAll" checked="checked" /></label>
         <ul>
@@ -141,7 +140,8 @@
                 </ul>
             </li>
         </ul>
-    </div>--><!-- /.sidebar -->
+    </div>-->
+    <!-- /.sidebar -->
     <script>
 
         /*
@@ -357,7 +357,7 @@
             ]
         }
 
-        
+
 
         //var json = '';
         //var property_set = new Set();
@@ -428,8 +428,8 @@
 
             for (prop in object) {
                 var value = object[prop]; // This should be trought key:values, not the entire object
-                console.log(value);                
-                
+                console.log(value);
+
                 switch (typeof (value)) {
 
                     /*  No need to output html markup when an object, this is creating some problems with the generated markup,
@@ -439,7 +439,7 @@
                     case "object":
 
                         var token = Math.random().toString(36).substr(2, 16);
-                        
+
                         json += "<ul>" + json_tree(value) + "</ul>";
                         //json += "<li><a class='label' href='#" + token + "' data-toggle='collapse'>" + object.prop + "</a><div class='collapse'>" + json_tree(value) + "</div></li>";
                         break;
@@ -452,7 +452,7 @@
 		                	</li>
 
 		                */
-                    
+
                     case "number": //Need to check for case ID not for a number, basically the ID value can be any combination of characters
                         json += "<label for='" + value + "'></label> <input type='checkbox' id='" + value + "' value='" + value + "' checked='checked'/>"
                         break;
@@ -483,28 +483,79 @@
             /*
             remove unwanted elements
             */
-            $('#output > span, #output > li').remove();
+            $('#output > span, #output > li, #output > input').remove();
             $("#output ul > span").each(function () {
                 if ($(this).is(':first-child')) {
                     $(this).parent().wrap('<li>').contents().unwrap();
                 }
             });
+
+            $("#output span").each(function () {
+                if ($(this).siblings('input[type="checkbox"]').length == 0) {
+                    $('<label for=""></label><input type="checkbox" value="" checked="checked">').insertAfter(this);
+                }
+            });
+
+            arr = [];
+            $("#output input[type='checkbox']").each(function () {
+                if ($(this).attr('id') != undefined)
+                    arr.push($(this).attr('id'))
+            });
+
             var arr = [];
             $("input#checkAll").click(function () {
                 if ($(this).is(':checked')) {
-                    $("#output input").prop('checked', true).attr('checked', 'checked');
-                    $("#output input").each(function () {
-                        arr.push($(this).attr('id'))
+                    $("#output input[type='checkbox']").prop('checked', true).attr('checked', 'checked');
+                    arr = [];
+                    $("#output input[type='checkbox']").each(function () {
+                        if ($(this).attr('id') != undefined)
+                            arr.push($(this).attr('id'))
                     });
                 }
                 else {
                     arr = [];
-                    $("#output input").removeAttr('checked');
+                    $("#output input[type='checkbox']").removeAttr('checked');
                 }
                 console.log(arr);
-
             });
-            
+
+            /**/
+            $("#output input[type='checkbox']").click(function () {
+                $this = $(this);
+                if ($this.is(':checked')) {
+                    $this.parent().find("input[type='checkbox']").prop('checked', true).attr('checked', 'checked');
+                }
+                else {
+                    $this.parent().find("input[type='checkbox']").removeAttr('checked', 'checked');
+                }
+
+
+                /** Check/Uncheck Checkall checkbox **/
+                var totalChildren = $("#output input[type='checkbox']").length;
+                var checkedChildren = $("#output input[type='checkbox']:checked").length;
+                if (totalChildren == checkedChildren) {
+                    $("input#checkAll").prop('checked', true).attr('checked', 'checked');
+                }
+                else {
+                    $("input#checkAll").removeAttr('checked');
+                }
+
+                /* Check/uncheck parent checkbox */
+                var siblings = $(this).closest('li').siblings().andSelf();
+                if (siblings.length == siblings.find('input[type="checkbox"]:checked').length) {
+                    $this.parent().parent().parent().children('input[type="checkbox"]').prop('checked', true).attr('checked', 'checked');
+                }
+                else if (siblings.find('input[type="checkbox"]:checked').length == 0) {
+                    $this.parent().parent().parent().children('input[type="checkbox"]').removeAttr('checked');
+                }
+
+                arr = [];
+                $("#output input[type='checkbox']:checked").each(function () {
+                    if ($(this).attr('id') != undefined)
+                        arr.push($(this).attr('id'))
+                });
+                console.log(arr);
+            });
 
 
             /* Any other functions need to be added here
