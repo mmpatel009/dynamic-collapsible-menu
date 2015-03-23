@@ -1,365 +1,519 @@
 <!DOCTYPE html>
 <html lang="">
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title></title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+</head>
+<body>
 
-	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-		<!--[if lt IE 9]>
-			<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-			<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-			<![endif]-->
-		</head>
-		<body>
-			
-			<div class="sidebar">
-				
-				<!-- This label should be checking/unchecking all checboxes from the tree, 
-					and pushing a an array with values selected last children ul not from the parents, 
-					array of selected values [69909, 7787, 69, 9194, 1782....] this should happen with a on change function
-				-->
-				<label for="checkAll">Select/Unselect All <input type="checkbox" id="checkAll" checked="checked" /></label>
-				<div id="output"></div>
-			</div>
-			
+    <div class="sidebar">
 
-			<!-- jQuery -->
-			<script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
-			
-			<!-- 
-				Ideally output, this will be updated with css, the script should be capable of outputting multiple nested levels, 
-				each parent checkbox from each ul should listen for checked/unchecked 
-				values from its group and output and array of values  console log values [111, 244, 9898, 28292] 
-				look the following jsfidle to see an example http://jsfiddle.net/0g1hk7mt/ of the console logs
-				and on the the last nested ul level, value of each should be pushed individually when check example console log values [1223] and so on...
-				if all childrens are unchecked parent should be unchecked as well and viceversa.
+        <!-- This label should be checking/unchecking all checboxes from the tree,
+            and pushing a an array with values selected last children ul not from the parents,
+            array of selected values [69909, 7787, 69, 9194, 1782....] this should happen with a on change function
+        -->
+        <label for="checkAll">Select/Unselect All <input type="checkbox" id="checkAll" checked="checked" /></label>
+        <div id="output"></div>
+    </div>
 
-				ABOUT THE COLLAPSABLE MENU:
-				This will be collapsable menu like the following example: http://jsfiddle.net/creativestudio/LvL75qw5/
-				Simple styling will be great but is not required, this has to be done with simple jquery, not a plugin
-			-->
-			
-			<div class="sidebar">
-				<label for="checkAll">Select/Unselect All <input type="checkbox" id="checkAll" checked="checked" /></label>
-				<ul>
-					<li>
-						<span>CiscoSingaporeEBC</span>
-						<label for=""></label>
-						<input type="checkbox" value="" checked="checked" />
-						<ul>
-							<li>
-								<span>Khoo Tech Puat</span>
-								<label for=""></label>
-								<input type="checkbox" value="" checked="checked" />
-								<ul>
-									<li>
-										<span>Boon Leong Ong</span>
-										<label for=""></label>
-										<input type="checkbox" value="" checked="checked" />
-									</li>
-									<li>
-										<span>Kiat Ho</span>
-										<label for=""></label>
-										<input type="checkbox" value="" checked="checked" />
-									</li>
-									<li>
-										<span>Overall Experience</span>
-										<label for=""></label>
-										<input type="checkbox" value="" checked="checked" />
-									</li>
-								</ul>
-							</li>
-						</ul>
-					</li>
-					<li>
-						<span>CiscoLondonEBC</span>
-						<label for=""></label>
-						<input type="checkbox" value="" checked="checked" />
-						<ul>
-							<li>
-								<span>Bernard Mathews Ltd.</span>
-								<label for=""></label>
-								<input type="checkbox" value="" checked="checked" />
-								<ul>
-									<li>
-										<span>Barry Pascolutti</span>
-										<label for=""></label>
-										<input type="checkbox" value="" checked="checked" />
-									</li>
-									<li>
-										<span>Kathrine Eilersten</span>
-										<label for=""></label>
-										<input type="checkbox" value="" checked="checked" />
-									</li>
-									<li>
-										<span>Martin Rowley</span>
-										<label for=""></label>
-										<input type="checkbox" value="" checked="checked" />
-									</li>
-								</ul>
-							</li>
-							<li>
-								<span>FNHW Day 1</span>
-								<label for=""></label>
-								<input type="checkbox" value="" checked="checked" />
-								<ul>
-									<li>
-										<span>Jurgen Gosch</span>
-										<label for=""></label>
-										<input type="checkbox" value="" checked="checked" />
-									</li>
-									<li>
-										<span>Overall Experience</span>
-										<label for=""></label>
-										<input type="checkbox" value="" checked="checked" />
-									</li>
-								</ul>
-							</li>
-							<li>
-								<span>Groupe Steria Day 1</span>
-								<label for=""></label>
-								<input type="checkbox" value="" checked="checked" />
-								<ul>
-									<li>
-										<span>Adam Philpott</span>
-										<label for=""></label>
-										<input type="checkbox" value="" checked="checked" />
-									</li>
-									<li>
-										<span>Pranav Kumar</span>
-										<label for=""></label>
-										<input type="checkbox" value="" checked="checked" />
-									</li>
-									<li>
-										<span>Steve Simlo</span>
-										<label for=""></label>
-										<input type="checkbox" value="" checked="checked" />
-									</li>
-								</ul>
-							</li>
-						</ul>
-					</li>
-				</ul>
-			</div><!-- /.sidebar -->
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
 
-			<script>
+    <!--
+        Ideally output, this will be updated with css, the script should be capable of outputting multiple nested levels,
+        each parent checkbox from each ul should listen for checked/unchecked
+        values from its group and output and array of values  console log values [111, 244, 9898, 28292]
+        look the following jsfidle to see an example http://jsfiddle.net/0g1hk7mt/ of the console logs
+        and on the the last nested ul level, value of each should be pushed individually when check example console log values [1223] and so on...
+        if all childrens are unchecked parent should be unchecked as well and viceversa.
 
-				/*
-					This is an example json file, basically the script should work with any valid json, 
-					hardcoding the values to loop through the objects is not going to work, I am providing few diferent json files.
-				*/
+        ABOUT THE COLLAPSABLE MENU:
+        This will be collapsable menu like the following example: http://jsfiddle.net/creativestudio/LvL75qw5/
+        Simple styling will be great but is not required, this has to be done with simple jquery, not a plugin
+    -->
 
-				var jsonObj = 
-				{
-					"level": [
-					{
-						"name": "CiscoSingaporeEBC",
-						"id": 6919,
-						"level": [
-							{
-								"name": "Khoo Tech Puat",
-								"id": 6323219,
-								"level": [
-									{
-										"name": "Boon Leong Ong",
-										"id": 69909
-									},
-									{
-										"name": "Kiat Ho",
-										"id": 7787
-									},
-									{
-										"name": "Overall Experience",
-										"id": 69
-									}
-								]
-							}
-						]
-					},
-					{
-						"name": "CiscoLondonEBC",
-						"id": 2367,
-						"level": [
-							{
-								"name": "Bernard Mathews Ltd.",
-								"id": 267,
-								"level": [
-									{
-										"name": "Barry Pascolutti",
-										"id": 9193
-									},
-									{
-										"name": "Kathrine Eilersten",
-										"id": 94
-									},
-									{
-										"name": "Martin Rowley",
-										"id": 1789
-									}
-								]
-							},
-							{
-								"name": "FNHW Day 1",
-								"id": 56781,
-								"level": [
-									{
-										"name": "Jurgen Gosch",
-										"id": 78349
-									},
-									{
-										"name": "Overall Experience",
-										"id": 756
-									}
-								]
-							},
-							{
-								"name": "Groupe Steria Day 1",
-								"id": 27129,
-								"level": [
-									{
-										"name": "Adam Philpott",
-										"id": 127919
-									},
-									{
-										"name": "Pranav Kumar",
-										"id": 798921
-									},
-									{
-										"name": "Steve Simlo",
-										"id": 79909
-									}
-								]
-							}
-						]
-					}]
-				};
+    <!--<div class="sidebar" style="display:none;">
+        <label for="checkAll">Select/Unselect All <input type="checkbox" id="checkAll" checked="checked" /></label>
+        <ul>
+            <li>
+                <span>CiscoSingaporeEBC</span>
+                <label for=""></label>
+                <input type="checkbox" value="" checked="checked" />
+                <ul>
+                    <li>
+                        <span>Khoo Tech Puat</span>
+                        <label for=""></label>
+                        <input type="checkbox" value="" checked="checked" />
+                        <ul>
+                            <li>
+                                <span>Boon Leong Ong</span>
+                                <label for=""></label>
+                                <input type="checkbox" value="" checked="checked" />
+                            </li>
+                            <li>
+                                <span>Kiat Ho</span>
+                                <label for=""></label>
+                                <input type="checkbox" value="" checked="checked" />
+                            </li>
+                            <li>
+                                <span>Overall Experience</span>
+                                <label for=""></label>
+                                <input type="checkbox" value="" checked="checked" />
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <span>CiscoLondonEBC</span>
+                <label for=""></label>
+                <input type="checkbox" value="" checked="checked" />
+                <ul>
+                    <li>
+                        <span>Bernard Mathews Ltd.</span>
+                        <label for=""></label>
+                        <input type="checkbox" value="" checked="checked" />
+                        <ul>
+                            <li>
+                                <span>Barry Pascolutti</span>
+                                <label for=""></label>
+                                <input type="checkbox" value="" checked="checked" />
+                            </li>
+                            <li>
+                                <span>Kathrine Eilersten</span>
+                                <label for=""></label>
+                                <input type="checkbox" value="" checked="checked" />
+                            </li>
+                            <li>
+                                <span>Martin Rowley</span>
+                                <label for=""></label>
+                                <input type="checkbox" value="" checked="checked" />
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <span>FNHW Day 1</span>
+                        <label for=""></label>
+                        <input type="checkbox" value="" checked="checked" />
+                        <ul>
+                            <li>
+                                <span>Jurgen Gosch</span>
+                                <label for=""></label>
+                                <input type="checkbox" value="" checked="checked" />
+                            </li>
+                            <li>
+                                <span>Overall Experience</span>
+                                <label for=""></label>
+                                <input type="checkbox" value="" checked="checked" />
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <span>Groupe Steria Day 1</span>
+                        <label for=""></label>
+                        <input type="checkbox" value="" checked="checked" />
+                        <ul>
+                            <li>
+                                <span>Adam Philpott</span>
+                                <label for=""></label>
+                                <input type="checkbox" value="" checked="checked" />
+                            </li>
+                            <li>
+                                <span>Pranav Kumar</span>
+                                <label for=""></label>
+                                <input type="checkbox" value="" checked="checked" />
+                            </li>
+                            <li>
+                                <span>Steve Simlo</span>
+                                <label for=""></label>
+                                <input type="checkbox" value="" checked="checked" />
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>--><!-- /.sidebar -->
+    <script>
 
-				//var json = '';
-				//var property_set = new Set();
+        /*
+            This is an example json file, basically the script should work with any valid json,
+            hardcoding the values to loop through the objects is not going to work, I am providing few diferent json files.
+        */
+
+        var jsonObj =
+        {
+            "level": [
+            {
+                "name": "CiscoSingaporeEBC",
+                "id": 6919,
+                "level": [
+                    {
+                        "name": "Khoo Tech Puat",
+                        "id": 6323219,
+                        "level": [
+                            {
+                                "name": "Boon Leong Ong",
+                                "id": 69909
+                            },
+                            {
+                                "name": "Kiat Ho",
+                                "id": 7787
+                            },
+                            {
+                                "name": "Overall Experience",
+                                "id": 69
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "CiscoLondonEBC",
+                "id": 2367,
+                "level": [
+                    {
+                        "name": "Bernard Mathews Ltd.",
+                        "id": 267,
+                        "level": [
+                            {
+                                "name": "Barry Pascolutti",
+                                "id": 9193
+                            },
+                            {
+                                "name": "Kathrine Eilersten",
+                                "id": 94
+                            },
+                            {
+                                "name": "Martin Rowley",
+                                "id": 1789
+                            }
+                        ]
+                    },
+                    {
+                        "name": "FNHW Day 1",
+                        "id": 56781,
+                        "level": [
+                            {
+                                "name": "Jurgen Gosch",
+                                "id": 78349
+                            },
+                            {
+                                "name": "Overall Experience",
+                                "id": 756
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Groupe Steria Day 1",
+                        "id": 27129,
+                        "level": [
+                            {
+                                "name": "Adam Philpott",
+                                "id": 127919
+                            },
+                            {
+                                "name": "Pranav Kumar",
+                                "id": 798921
+                            },
+                            {
+                                "name": "Steve Simlo",
+                                "id": 79909
+                            }
+                        ]
+                    }
+                ]
+            }]
+        };
+
+        jsonObj = {
+            "level_0": [
+                {
+                    "level_0_name": "Americas",
+                    "level_0_id": 1,
+                    "level_1": [
+                        {
+                            "level_1_name": "CiscoSanJoseEBC",
+                            "level_1_id": 12345,
+                            "level_2": [
+                                {
+                                    "level_2_name": "MinistryOfDefense",
+                                    "level_2_id": 2451,
+                                    "level_3": [
+                                        {
+                                            "name": "Andy Schutz",
+                                            "id": 7867
+                                        },
+                                        {
+                                            "name": "Overall Experience",
+                                            "id": 7866
+                                        },
+                                        {
+                                            "name": "Vijay Venugopal",
+                                            "id": 7870
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "level_0_name": "APJ",
+                    "level_1": [
+                        {
+                            "level_1_name": "CiscoSingaporeEBC",
+                            "level_2": [
+                                {
+                                    "level_2_name": "Khoo Tech Puat",
+                                    "level_2_id": 2222,
+                                    "level_3": [
+                                        {
+                                            "name": "Boon Leong Ong",
+                                            "id": 6919
+                                        },
+                                        {
+                                            "name": "Kiat Ho",
+                                            "id": 6917
+                                        },
+                                        {
+                                            "name": "Overall Experience",
+                                            "id": 6918
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "level_0_name": "Emear",
+                    "level_1": [
+                        {
+                            "level_1_name": "CiscoLondonEBC",
+                            "level_2": [
+                                {
+                                    "level_2_name": "Bernard Mathews Ltd.",
+                                    "level_2_id": 2367,
+                                    "level_3": [
+                                        {
+                                            "name": "Barry Pascolutti",
+                                            "id": 7193
+                                        },
+                                        {
+                                            "name": "Kathrine Eilersten",
+                                            "id": 7194
+                                        },
+                                        {
+                                            "name": "Martin Rowley",
+                                            "id": 7189
+                                        }
+                                    ]
+                                },
+                                {
+                                    "level_2_name": "FNHW Day 1",
+                                    "level_2_id": 5678,
+                                    "level_3": [
+                                        {
+                                            "name": "Jurgen Gosch",
+                                            "id": 7834
+                                        },
+                                        {
+                                            "name": "Overall Experience",
+                                            "id": 7835
+                                        }
+                                    ]
+                                },
+                                {
+                                    "level_2_name": "Groupe Steria Day 1",
+                                    "level_2_id": 2789,
+                                    "level_3": [
+                                        {
+                                            "name": "Adam Philpott",
+                                            "id": 7919
+                                        },
+                                        {
+                                            "name": "Pranav Kumar",
+                                            "id": 7921
+                                        },
+                                        {
+                                            "name": "Steve Simlo",
+                                            "id": 7928
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+
+        
+
+        //var json = '';
+        //var property_set = new Set();
 
 
-				// function iterate(obj, stack)  {
-				// 	json = "<ul>";
+        // function iterate(obj, stack)  {
+        // 	json = "<ul>";
 
-				// 	for (var property in obj)  {
-				// 		if (obj.hasOwnProperty(property))  {
-				// 			if (typeof obj[property] == "object") {
-				// 				iterate(obj[property], stack + '.' + property);
-				// 			} 
-				// 			else {
-				//             	// console.log(property);
-				//             	property_set.add(property);
-				//             	json+="<li>";
-				//             	if(typeof obj[property] !== "number") {
-			 //            		json+="<li>"+obj[property]+"</li>";
-			 //            		console.log(obj[property]);
-		  //           			}
-				//             }
-				//         } json += "</li>";
-			 //    	}
-				// }
+        // 	for (var property in obj)  {
+        // 		if (obj.hasOwnProperty(property))  {
+        // 			if (typeof obj[property] == "object") {
+        // 				iterate(obj[property], stack + '.' + property);
+        // 			}
+        // 			else {
+        //             	// console.log(property);
+        //             	property_set.add(property);
+        //             	json+="<li>";
+        //             	if(typeof obj[property] !== "number") {
+        //            		json+="<li>"+obj[property]+"</li>";
+        //            		console.log(obj[property]);
+        //           			}
+        //             }
+        //         } json += "</li>";
+        //    	}
+        // }
 
-				// iterate(jsonObj)
-
-
-
-				//the object
-
-				// function listMenu(o) {
-
-				//     var ul = document.createElement('ul');
-				//     for (var p in o) {
-
-				//             var li = document.createElement('li');
-				//             var span = document.createElement('span');
-
-				//             if (typeof o[p] == "object") {
-				//             	li.appendChild(listMenu(o[p]));
-				//             }
-
-				//             else if (typeof o[p] == name ) {
-				//             	span.appendChild(listMenu(o[p]));
-				//             	span.className="hidden";
-				            	
-				//             }
-
-				//             else li.innerHTML = o[p];
-				//             ul.appendChild(li);
-				//         //}
-				//     }
-				//     return ul;
-				// }
-				// document.body.appendChild( listMenu(jsonObj) );
+        // iterate(jsonObj)
 
 
 
-				function json_tree(object) {
-				
-				/* This is the wrapper ul parent
+        //the object
 
-				*/
-				var json="<ul>";
+        // function listMenu(o) {
 
-				for(prop in object){
-				    var value 	= object[prop]; // This should be trought key:values, not the entire object
-				    console.log(value);
-				    switch (typeof(value)){
-						
-						/*  No need to output html markup when an object, this is creating some problems with the generated markup,
+        //     var ul = document.createElement('ul');
+        //     for (var p in o) {
 
-							Ideally html markup:
-						*/
+        //             var li = document.createElement('li');
+        //             var span = document.createElement('span');
+
+        //             if (typeof o[p] == "object") {
+        //             	li.appendChild(listMenu(o[p]));
+        //             }
+
+        //             else if (typeof o[p] == name ) {
+        //             	span.appendChild(listMenu(o[p]));
+        //             	span.className="hidden";
+
+        //             }
+
+        //             else li.innerHTML = o[p];
+        //             ul.appendChild(li);
+        //         //}
+        //     }
+        //     return ul;
+        // }
+        // document.body.appendChild( listMenu(jsonObj) );
 
 
-				        case "object":
-				        	var token = Math.random().toString(36).substr(2,16);
-				                json += "<li><a class='label' href='#"+token+"' data-toggle='collapse'>"+object.prop+"</a><div class='collapse'>"+json_tree(value)+"</div></li>";
-		                break;
 
-		                /*  This has to render a 
 
-		                	<li class="item"> Value 
+        function json_tree(object) {
+
+            /* This is the wrapper ul parent
+
+            */
+            var json = "";
+
+            for (prop in object) {
+                var value = object[prop]; // This should be trought key:values, not the entire object
+                console.log(value);                
+                
+                switch (typeof (value)) {
+
+                    /*  No need to output html markup when an object, this is creating some problems with the generated markup,
+
+                        Ideally html markup:
+                    */
+                    case "object":
+
+                        var token = Math.random().toString(36).substr(2, 16);
+                        
+                        json += "<ul>" + json_tree(value) + "</ul>";
+                        //json += "<li><a class='label' href='#" + token + "' data-toggle='collapse'>" + object.prop + "</a><div class='collapse'>" + json_tree(value) + "</div></li>";
+                        break;
+
+                        /*  This has to render a
+
+		                	<li class="item"> Value
 			                	<label for="value>label value<label>
-			                	<input type="checkbox id="value"" value="value"/> 
+			                	<input type="checkbox id="value"" value="value"/>
 		                	</li>
 
 		                */
+                    
+                    case "number": //Need to check for case ID not for a number, basically the ID value can be any combination of characters
+                        json += "<label for='" + value + "'></label> <input type='checkbox' id='" + value + "' value='" + value + "' checked='checked'/>"
+                        break;
 
-		                case "number": //Need to check for case ID not for a number, basically the ID value can be any combination of characters
-				                json += "<label for='"+value+"'>label value</label> <input type='checkbox' id='"+value+"' value='"+value+"' checked='checked'/>"
-		                break;
+                    case "string": // Nor sure is this is needed
+                        if (isNaN(value) || value == "")
+                            json += '<span>' + value + '</span>'
+                        else
+                            json += "<label for='" + value + "'></label> <input type='checkbox' id='" + value + "' value='" + value + "' checked='checked'/>"
+                        break;
 
-		                case "string": // Nor sure is this is needed
-				                json += '<li>'+value+'</li>'
-		                break;
+                    default:
+                        json += "<li>" + prop + "=" + value + "</li>";
+                }
+            }
+            return json + "";
 
-		                default:
-		                	json += "<li>"+prop+"="+value+"</li>";
-		            	} 
-			        }
-			        return json+"</ul>";
-
-			    } 
-
-
-				$(document).ready(function() {
-					/*
-						Appending menu tree to a DOM element
-					*/
-
-				    $('#output').html(json_tree(jsonObj));
-
-				    /* Any other functions need to be added here
-				    */
-
-				});
+        }
 
 
+        $(document).ready(function () {
+            /*
+                Appending menu tree to a DOM element
+            */
 
-			</script>
+            $('#output').html(json_tree(jsonObj));
 
+            /*
+            remove unwanted elements
+            */
+            $('#output > span, #output > li').remove();
+            $("#output ul > span").each(function () {
+                if ($(this).is(':first-child')) {
+                    $(this).parent().wrap('<li>').contents().unwrap();
+                }
+            });
+            var arr = [];
+            $("input#checkAll").click(function () {
+                if ($(this).is(':checked')) {
+                    $("#output input").prop('checked', true).attr('checked', 'checked');
+                    $("#output input").each(function () {
+                        arr.push($(this).attr('id'))
+                    });
+                }
+                else {
+                    arr = [];
+                    $("#output input").removeAttr('checked');
+                }
+                console.log(arr);
+
+            });
+            
+
+
+            /* Any other functions need to be added here
+            */
+
+        });
+
+
+
+    </script>
 </body>
 </html>
